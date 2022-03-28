@@ -29,8 +29,8 @@ Kubectl get nodes
 Kubectl create deploy nx –-image=nginx
 Kubectl expose deploy nx –type=LoadBalancer –port --target-port=80
 ```
-# 쿠버네티스 관리하는 명령어
-**kubeadm** : 클러스터를 부트스트랩하는 명령  
+# 쿠버네티스 관리 명령어
+**kubeadm** : 클러스터 부트스트랩하는 명령  
 **kubelet** : 클러스터의 모든 시스템에서 실행되는 구성 요소로, 창 및 컨테이너 시작과 같은 작업을 수행  
 **kubectl** : 커맨드 라인 util은 당신의 클러스터와 대화
 
