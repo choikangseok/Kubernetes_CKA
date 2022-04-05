@@ -36,4 +36,33 @@ spec : 컨테이너, 볼륨 등의 정보
 status : 포드의 상태, 각 테이너의 설명 및  상태, 포드 내부의 IP 및 그 밖의 기본 정보 등
 ```
 
-
+### Descriptor
+```
+[template]
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hello
+spec:
+  template:
+    # This is the pod template
+    spec:
+      containers:
+      - name: hello
+        image: busybox:1.28
+        command: ['sh', '-c', 'echo "Hello, Kubernetes!" && sleep 3600']
+      restartPolicy: OnFailure
+    # The pod template ends here
+```
+### POD 관련 명령어 예시
+```
+$kubectl get pod http-go -o yaml # yaml 정보 출력
+$kubectl describe pod http-go #정보 출력
+$kubectl port-forward http-go 8080:8080 #포워딩
+$kubectl create -f go-http-pod.yaml #생성
+$kubectl delete -f go-http-pod.yaml #삭제
+$kubectl logs http-go #로그
+$kubectl annotate pod http-go test1234=test1234  # 주석을 넣는 공간, 필요한 정보들, 팀들과 공유해야하는 내용들을 넣는다.
+$kubectl delete pod http-go # pod 삭제
+$kubectl delete pod --all # 모든 pod 삭제
+```
