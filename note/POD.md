@@ -66,3 +66,14 @@ $kubectl annotate pod http-go test1234=test1234  # 주석을 넣는 공간, 필�
 $kubectl delete pod http-go # pod 삭제
 $kubectl delete pod --all # 모든 pod 삭제
 ```
+
+### 설명할 수 있어야하는 것들
+```
+yaml로 pod을 구성한다는 것과 deployment의 차이점
+a pod is the core building block for running applications in a Kubernetes cluster
+a deployment is a management tool used to control the way pods behave
+
+deploy로 구성했을때 pod을 삭제해도 계속 생성된다. 어떻게 지워야 할까?
+deploy > pod 순으로 
+```
+
