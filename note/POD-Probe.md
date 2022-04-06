@@ -18,3 +18,35 @@
  - 애플리케이션의 시작 시기를 확인하여 가용성을 높이는 기능
  - Liveness와 Readiness의 기능을 비활성화 (살아 있다고, 준비되었다고 판단했을 때)
 ```
+
+### Liveness Test
+https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+```
+[pods/probe/exec-liveness.yaml]
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    test: liveness
+  name: liveness-exec
+spec:
+  containers:
+  - name: liveness
+    image: k8s.gcr.io/busybox
+    args:
+    - /bin/sh
+    - -c
+    - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
+    livenessProbe:
+      exec:
+        command:
+        - cat
+        - /tmp/healthy
+      initialDelaySeconds: 5
+      periodSeconds: 5
+```
+### readiness Test
+```
+[readiness Test]
+$ kubectl apply -f https://k8s.io/examples/pods/probe/tcp-liveness-readiness.yaml
+```
