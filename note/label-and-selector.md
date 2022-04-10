@@ -24,7 +24,7 @@ kubectl label pod http-go-v2 test=foo
 
 #기존의 레이블을 수정할 때는 --overwrite 옵션을 주어서 실행
 kubectl label pod http-go-v2 rel=beta #오류
-kubectl label pod http-go-v2 rel=beta --overwrite #기#레이 레이블 수정
+kubectl label pod http-go-v2 rel=beta --overwrite # 레이블 수정
 
 #레이블 삭제
 kubectl label pod http-go-v2 rel- #마이너스 옵션을 주면 된다.
@@ -38,15 +38,13 @@ kubectl get pod --show-labels
 ```
 kubectl get pod -L app,rel #대문자 L을 통해 확인
 ```
-### 레이블로 필터링하여 검색
+### 레이블로 필터링하여 검색 (셀렉터)
 ```
 kubectl get pod --show-labels -l 'env'                # env가 있는 것만 검색
 kubectl get pod --show-labels -l '!env'               # env가 없는 것만 검색
 kubectl get pod --show-labels -l 'env!=test'          # env가 test가 아닌 것만 검색
 kubectl get pod --show-labels -l 'env!=test,rel=beta' # 등
+
 ```
 
-### 레이블 배치 전략도 있으니 확인할 것
-
-
-### 셀렉터
+#####  - *레이블 배치 전략도 있으니 확인할 것*
