@@ -43,7 +43,7 @@ $ minikube start --cpus 4 --memory 8096 --disk-size=40g --kubernetes-version=v1.
 #### Kubeflow v1.3.0 설치
 ```
 $ git clone -b <tag> <repository>
-$$ git clone -b v1.3.0 https://github.com/kubeflow/manifests.git
+$ git clone -b v1.3.0 https://github.com/kubeflow/manifests.git
 
 ```
 minikube start --cpus 4 --memory 8096 --disk-size=40g --kubernetes-version=v1.21.2 --driver=none
