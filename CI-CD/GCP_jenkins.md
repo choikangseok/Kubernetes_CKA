@@ -19,7 +19,7 @@ $ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 gcloud compute firewall-rules create jenkins-ci --allow=tcp:8080
 ```
 
-### 젠킨스 webhook
+### 젠킨스 Git-webhook
 ```
 [Docker Pipeline 등록]
 [github]
