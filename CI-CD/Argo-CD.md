@@ -65,8 +65,7 @@ service/argocd-server-metrics                     ClusterIP      10.105.6.226   
  ```
 
  ```
- [manifests 파일 구성]
-
+[manifests 파일 구성]
 project: default
 source:
  repoURL: 'https://github.com/choikangseok/flask-example-apps'

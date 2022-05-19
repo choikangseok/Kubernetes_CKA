@@ -5,7 +5,7 @@ $ sudo -i
 $ apt update && apt install -y docker.io
 $ docker run -d -p 8080:8080 --name jenkins -v /home/jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -u root jenkins/jenkins:lts
 
-# 도커 젠킨스 안쪽
+# 젠킨스 내부에 도커 설치
 # 도커를 설치한다해도 내부적으로 서비스가 돌아가지는 않는다.
 $ docker exec jenkins apt update
 $ docker exec jenkins apt install -y docker.io
