@@ -63,6 +63,7 @@ service/argocd-repo-server                        ClusterIP      10.109.226.59  
 service/argocd-server                             LoadBalancer   10.109.53.237    192.168.163.154   80:30746/TCP,443:32260/TCP   3d8h
 service/argocd-server-metrics                     ClusterIP      10.105.6.226     <none>            8083/TCP                     3d8h
  ```
+![image](https://user-images.githubusercontent.com/12148906/166703089-ecaeb561-dacd-4f9e-b5d0-fafd84b99338.png)
 
  ```
 [manifests 파일 구성]
@@ -78,3 +79,7 @@ syncPolicy:
  syncOptions:
    - CreateNamespace=true
  ```
+![image](https://user-images.githubusercontent.com/12148906/166703199-e7f20129-7598-4848-b771-125cb16914b7.png)
+
+![image](https://user-images.githubusercontent.com/12148906/166703258-7d620c32-6541-45ec-afc6-78cf830ba829.png)
+
